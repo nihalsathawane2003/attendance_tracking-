@@ -1,0 +1,195 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1b1b2f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-header img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    margin: 20px 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    background-color: #3e4c59;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Dashboard grid for cards */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cards styling with different colors */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Light colors for different cards */
+.card:nth-child(1) { background-color: #ffebf0; } /* Light pink */
+.card:nth-child(2) { background-color: #e1f7d5; } /* Light green */
+.card:nth-child(3) { background-color: #fff3e1; } /* Light orange */
+.card:nth-child(4) { background-color: #e1f1ff; } /* Light blue */
+.card:nth-child(5) { background-color: #f4f1ff; } /* Light purple */
+.card:nth-child(6) { background-color: #fff9c4; } /* Light yellow */
+.card:nth-child(7) { background-color: #ffecd6; } /* Light peach */
+.card:nth-child(8) { background-color: #e1f5fe; } /* Light cyan */
+.card:nth-child(9) { background-color: #f8f1f0; } /* Light rose */
+.card:nth-child(10) { background-color: #e7e7ff; } /* Light lavender */
+
+/* Section heading styling */
+.section-heading {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Batch Registration grid for 3 cards */
+.batch-registration {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Set to 3 columns */
+    gap: 20px;
+}
+
+/* Light colors for batch registration cards */
+.batch-registration .card:nth-child(1) { background-color: #d0dae2; } /* Light Blue */
+.batch-registration .card:nth-child(2) { background-color: #bbbbb4; } /* Gray */
+.batch-registration .card:nth-child(3) { background-color: #cbcdc2; } /* Light Olive */
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    .dashboard, .batch-registration {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .dashboard, .batch-registration {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dashboard, .batch-registration {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .card p {
+        font-size: 20px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+}

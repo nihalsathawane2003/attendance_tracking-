@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='attendance.css') }}">
+</head>
+<body>
+    <div class="attendance-container">
+        <h2>Attendance Tracker</h2>
+        
+        <div class="attendance-form">
+            <form method="POST" action="{{ url_for('attendance') }}">
+                <input type="text" name="student_name" placeholder="Student Name" required>
+                <input type="submit" value="Mark Present">
+            </form>
+            
+            <!-- Button to reset attendance -->
+            <form method="POST" action="{{ url_for('attendance') }}">
+                <input type="hidden" name="reset" value="1">
+                <input type="submit" value="Reset Attendance" class="reset-btn">
+            </form>
+        </div>
+
+        <!-- Display attendance table -->
+        <div class="attendance-table">
+            <h3>Current Attendance</h3>
+            {{ attendance_data|safe }}
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>

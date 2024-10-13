@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="tabs">
+                <button class="tab-link active" id="login-tab">Sign In</button>
+                <button class="tab-link" id="register-tab">Sign Up</button>
+            </div>
+            <div class="form-content">
+                <!-- Login Form -->
+                <form method="POST" action="{{ url_for('login') }}" id="login-form">
+                    <input type="text" name="username" placeholder="Username or email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <label class="remember">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <input type="submit" name="login" value="Sign In">
+                    <a href="#" class="forgot-password">Forgot Password</a>
+                </form>
+
+                <!-- Register Form -->
+                <form method="POST" action="{{ url_for('register') }}" id="register-form" style="display:none;">
+                    <input type="text" name="new_username" placeholder="New Username" required>
+                    <input type="password" name="new_password" placeholder="New Password" required>
+                    <input type="submit" name="register" value="Sign Up">
+                </form>
+            </div>
+        </div>
+
+        <!-- Error or success messages -->
+        {% if error_message %}
+        <div class="error">{{ error_message }}</div>
+        {% endif %}
+        
+        {% if success_message %}
+        <div class="success">{{ success_message }}</div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('login-tab').addEventListener('click', function () {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+        document.getElementById('register-tab').addEventListener('click', function () {
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

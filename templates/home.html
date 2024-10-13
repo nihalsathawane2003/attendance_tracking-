@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Institute of Medical Science Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            <h2>Menu</h2>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Training Center</a></li>
+            <li><a href="#">Batch Master</a></li>
+            <li><a href="#">Holiday</a></li>
+            <li><a href="#">Student Master</a></li>
+            <li><a href="#">Faculty Master</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="{{ url_for('attendance') }}">Attendance</a></li> <!-- Added Attendance Page Link -->
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Prasad Institute of Medical Science Dashboard</h1>
+            <p>Attendance Summary: {{ current_date }}</p>
+        </div>
+
+        <!-- Dashboard with 10 cards -->
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total Training Partners</h3>
+                <p>1</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Schemes</h3>
+                <p>2</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Training Centers</h3>
+                <p>3</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Students</h3>
+                <p>7</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Faculty</h3>
+                <p>5</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Courses</h3>
+                <p>4</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Total Departments</h3>
+                <p>6</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Upcoming Events</h3>
+                <p>2</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <div class="card">
+                <h3>Completed Courses</h3>
+                <p>10</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+
+        <!-- Separate section for Batches Registration -->
+        <h2 class="section-heading">Batches Registration:</h2>
+        <div class="batch-registration">
+            <div class="card">
+                <h3>Total</h3>
+                <p>3</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Batch Schedule</h3>
+                <p>5</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <h3>Completed</h3>
+                <p>5</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
